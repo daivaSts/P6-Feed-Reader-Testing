@@ -10,8 +10,8 @@ CHALENGE:
 
 TO USE:
 * Clone project or download project's zip folder to your computer.
-* Open index.html file in your browser.
-* Open jasmine\spec\feedreader.js to see all the tests and the description what they are for.
+* Open dist/index.html file in your browser.
+* Open dist/jasmine/spec/feedreader.js to see all the tests and the description what they are for.(Note: feedreader.js file in the dist directory is left un-minified for better readability)
 
 #### Development, Optimization Tips, References and Resources:
 * Open Tips-tricks-resources.txt
