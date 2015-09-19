@@ -1,0 +1,17 @@
+#### Optimization Tips, Tricks and Resourses:
+
+
+* https://www.udacity.com/course/javascript-testing--ud549
+* Handlebars - http://handlebarsjs.com/
+* Jasmine - http://jasmine.github.io/
+* http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html
+* http://www.jslint.com/
+* https://validator.w3.org/#validate_by_input
+* jigsaw.w3.org/css-validator/#validate_by_input
+* westciv.com/tools/manifestR/
+* gruntjs.com/
+* ngrok.com/
+* http://usejsdoc.org/
+* Stackoverflow
+* Chrome Developer Tools
+
