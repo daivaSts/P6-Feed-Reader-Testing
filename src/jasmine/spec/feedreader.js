@@ -12,7 +12,6 @@ $(function () {
     */
     describe("RSS Feeds:", function () {
         var len = allFeeds.length;
-        var i, j;
 
         /* It tests to make sure that the allFeeds variable has been defined and that it is
          * not empty project.
@@ -26,7 +25,7 @@ $(function () {
          * has a URL defined and that the URL is not empty.
          */
         it("Each feed has URL.", function () {
-            for (i = 0; i < len; i += 1) {
+            for (var i = 0; i < len; i ++) {
                 expect(allFeeds[i].url).toBeDefined();
                 expect(allFeeds[i].url.length).not.toBe(0);
             }
@@ -36,7 +35,7 @@ $(function () {
          * and that the name is not empty.
          */
         it("Each feed has name.", function () {
-            for (j = 0; j < len; j += 1) {
+            for (var j = 0; j < len; j ++) {
                 expect(allFeeds[j].name).toBeDefined();
                 expect(allFeeds[j].name.length).not.toBe(0);
             }
@@ -60,9 +59,11 @@ $(function () {
          */
         it("Menu element changes visibility on click.", function () {
             $(".menu-icon-link").click();
+            expect($('body').hasClass('menu-hidden')).toBe(false);
             expect(menu[0]).toBeUndefined();
 
             $(".menu-icon-link").click();
+            expect($('body').hasClass('menu-hidden')).toBe(true);
             expect(menu[0].hidden).toBe(false);
         });
     });
@@ -84,12 +85,12 @@ $(function () {
 
         it("There is at least one element within the .feed container.", function (done) {
             expect($(".feed a").length).not.toBe(0);
-
             done();
         });
 
         it("The .feed container has children.", function (done) {
-            expect($(".feed").children()[0]).not.toBeNull();
+            //expect($(".feed").children()[0]).not.toBeNull();
+            expect($(".feed").children()[0]).not.toBeUndefined();
             done();
         });
 
@@ -101,7 +102,8 @@ $(function () {
 
         it("There is 'a' tag element within the .feed container.", function (done) {
             elmChild = $(".feed").children("a");
-            expect(elmChild).not.toBeNull();
+            //expect(elmChild).not.toBeNull();
+            expect(elmChild).not.toBeUndefined();
             done();
         });
 
@@ -112,7 +114,7 @@ $(function () {
         });
 
         it("The 'a' element contains 'p' element.", function (done) {
-            expect($("a p")[0]).not.toBeNull();
+            expect($("a p")[0]).not.toBeUndefined();
             done();
         });
 
@@ -142,17 +144,11 @@ $(function () {
             });
         });
 
-        it("The title is changing in .feed container 'h2' tag with new load.", function (done) {
+        it("The title is changing in .feed container 'h2' and 'p' tags with new load.", function (done) {
             loadFeed(1, function () {
                 titles2 = $(".feed h2").text();
-                expect(titles1).not.toBe(titles2);
-                done();
-            });
-        });
-
-        it("The content is changing in .feed container 'p' tag with new load.", function (done) {
-            loadFeed(1, function () {
                 p2 = $(".feed p").text();
+                expect(titles1).not.toBe(titles2);
                 expect(p1).not.toBe(p2);
                 done();
             });
